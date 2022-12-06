@@ -29,20 +29,20 @@ def save_paquete(paquetes:Paquete):
     paquetes.append(paquetes.dict())    
     return paquetes[-1]
 
-@app.get("paquetes/{paquetes_id")
+@app.get("paquetes/{paquetes_id}")
 def get_paquete(paquetes_id:str):
     for post in paquetes:
         if paquetes["id"]== paquetes_id:
             return post
         
-@app.delete("/paquetes/{paquetes_id")
+@app.delete("/paquetes/{paquetes_id}")
 def delete_paquete(paquetes_id:str):
     for index, post in enumerate(paquetes):
         if post["id"]== paquetes_id:   
             paquetes.pop(index)
             return{"El paquete ha sido eliminado exitosamente"}
         
-@app.put("paquetes/{paquetes_id")
+@app.put("paquetes/{paquetes_id}")
 def upate_paquete(paquetes_id:str, updatePaquete:Paquete):
     for index, post in enumerate(paquetes):
         if paquetes["id"]==paquetes_id:
